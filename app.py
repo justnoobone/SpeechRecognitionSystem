@@ -159,7 +159,7 @@ class ObjectDetectionApp(QDialog):
              """)
 
         bt_label=QLabel('智能垃圾识别系统',self)
-        bt_label.setFont(QFont('楷体', 20))
+        bt_label.setFont(QFont('楷体', 15))
         bt_label.setGeometry(QRect(360, 10, 300, 30))
         self.log_txt=QTextEdit(self)
         self.log_txt.setGeometry(QRect(10, 60, 980, 250))
@@ -348,11 +348,11 @@ class LoginDialog(QDialog):
 
         user_login_label = QLabel("  用 户 登 录", self)
         name_label = QLabel("用户名:", self)
-        name_label.setFont(QFont('Arial', 15))
+        name_label.setFont(QFont('楷体', 12))
         self.name_input = QLineEdit(self)
 
         password_label = QLabel("密   码:", self)
-        password_label.setFont(QFont('Arial', 15))
+        password_label.setFont(QFont('Arial', 12))
         self.password_input = QLineEdit(self)
         self.password_input.setEchoMode(QLineEdit.Password)
         self.label = ClickableLabel("修改密码？")
@@ -366,9 +366,9 @@ class LoginDialog(QDialog):
          
         """)
         lio_button = QPushButton("注册", self)
-        lio_button.setFont(QFont('Arial', 15))
+        lio_button.setFont(QFont('楷体', 10))
         register_button = QPushButton("登录", self)
-        register_button.setFont(QFont('Arial', 15))
+        register_button.setFont(QFont('楷体', 10))
         lio_button.clicked.connect(self.lio_buttonData)
         register_button.clicked.connect(self.register_login)
         # 设置部件位置和大小
@@ -378,12 +378,12 @@ class LoginDialog(QDialog):
         password_label.setGeometry(610, 320, 100, 30)
         self.password_input.setGeometry(750, 320, 200, 30)
 
-        lio_button.setGeometry(880, 480, 80, 30)
-        register_button.setGeometry(650, 480, 80, 30)
+        lio_button.setGeometry(880, 480, 100, 30)
+        register_button.setGeometry(650, 480, 100, 30)
 
         # 设置部件样式
         user_login_label.setAlignment(Qt.AlignCenter)
-        user_login_label.setFont(QFont("Arial", 20))
+        user_login_label.setFont(QFont("楷体", 15))
         name_label.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
         password_label.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
         self.setStyleSheet('''
