@@ -74,18 +74,18 @@ class AudioRecorder(QThread):
         while self.is_recording:
             data = self.stream.read(self.chunk_size)
             self.data_chunks.append(data)
+            if not self.is_recording:  # 检查录音是否已经停止
+                break
         self.stream.stop_stream()
         self.stream.close()
         self.save_recording()
         self.recording_stopped.emit()
-
 
     # 停止录音，手动停止
     def stop_recording(self):
         self.is_recording = False
 
     def save_recording(self):
-        self.filename='./init/'+str(uuid.uuid4())+'.wav'
         with wave.open(self.filename, 'wb') as wf:
             wf.setnchannels(1)  # 设置音频文件的声道数为1
             wf.setsampwidth(self.p.get_sample_size(pyaudio.paInt16))  # 获取音频文件的样本宽度（采样深度）
@@ -93,6 +93,7 @@ class AudioRecorder(QThread):
             wf.writeframes(b''.join(self.data_chunks))  # 将所有录音数据块连接起来，并写入文件中
         print(f"录音已成功保存为 {self.filename}")
         self.resd_path.emit(self.filename)
+        self.data_chunks = []  # 清空录音数据列表
 
 
 class WhernerTex(QThread):
