@@ -1,5 +1,5 @@
 import sys
-import pygame
+# import pygame
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
@@ -315,11 +315,7 @@ class ObjectDetectionApp(QDialog):
                 self.status_cell(data_txt)      # 如果按钮radio_button1被选中，则调用status_cell方法，将data_txt中的信息显示在状态栏中，即播放声音
 
     def status_cell(self, text):
-        '''
-        文字转语音播放
-        :param text:
-        :return:
-        '''
+
         engine = pyttsx.init()      # 初始化一个文本到语音转换引擎
         engine.say(text)            # 使用 say 方法将输入的文本传递给引擎，以进行语音合成
         engine.runAndWait()         # 使用runAndWait方法来等待语音合成引擎完成播放。
@@ -351,7 +347,6 @@ class LoginDialog(QDialog):
         self.setWindowTitle("登录")
         self.setWindowIcon(QIcon('./img/ios-option-jizhang.png'))
         self.setFixedSize(1000, 600)
-
         self.initUI()
 
     def initUI(self):

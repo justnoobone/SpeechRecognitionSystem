@@ -16,7 +16,7 @@ def plt_imgs(filename):
     # 绘制波形图
 
     librosa.display.waveshow(y, sr=sr)
-    plt.title('Waveform of the Audio', fontproperties="SimSun")  # 设置标题
+    plt.title('Waveform of the Audio', fontproperties="SimSun",fontsize=20)  # 设置标题
     plt.xlabel('Time (s)', fontsize=12)  # 设置x轴标签
     plt.ylabel('Amplitude', fontsize=12)  # 设置y轴标签
     plt.tight_layout()  # 调整布局以避免重叠
@@ -29,7 +29,7 @@ def plt_imgs(filename):
 
     librosa.display.specshow(log_S, sr=sr, x_axis='time', y_axis='mel', fmax=8000)
     plt.colorbar(format='%+2.0f dB')
-    plt.title('Spectrogram of the Audio', fontproperties="SimSun")
+    plt.title('Spectrogram of the Audio', fontproperties="SimSun",fontsize=20)
     filename = f'./init/spectrogram.png'
     plt.savefig(filename)
     return filename1, filename
