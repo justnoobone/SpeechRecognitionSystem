@@ -125,7 +125,7 @@ class ObjectDetectionApp(QDialog):
 
         # 创建主窗口
         self.setWindowIcon(QIcon('./img/ios-option-jizhang.png'))
-        self.setWindowTitle("智能垃圾识别系统")
+        self.setWindowTitle("语音识别系统")
         self.resize(1030, 660)
         self.username = username
         self.is_recording = False
@@ -169,7 +169,7 @@ class ObjectDetectionApp(QDialog):
 
              """)
 
-        bt_label = QLabel('智能垃圾识别系统', self)
+        bt_label = QLabel('语音识别系统', self)
         bt_label.setFont(QFont('楷体', 15))
         bt_label.setGeometry(QRect(360, 10, 300, 30))
         self.log_txt = QTextEdit(self)
