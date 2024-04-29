@@ -476,7 +476,7 @@ class LoginDialog(QDialog):
 class RegisterDialog(QDialog):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("register")
+        self.setWindowTitle("修改密码")
         self.setWindowIcon(QIcon('./img/ios-option-jizhang.png'))
         self.setFixedSize(1000, 600)
         self.bg_label = QLabel(self)
